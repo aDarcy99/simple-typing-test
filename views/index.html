@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Typing Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main id="app">
+      <section class="container mx-auto sm:px-4">
+        <h1 class="text-2xl text-gray-800 font-medium">Simple Typing Test</h1>
+        <p class="text-base text-gray-600 my-4">
+          Easily practice your typing skills using this simple to use typing
+          test.
+        </p>
+        <div class="flex items-center mb-4">
+          <button id="start-button" class="btn btn-primary">Start Test</button>
+          <button id="cancel-button" class="btn btn-secondary hidden">Cancel Test</button>
+          <input type="number" id="time-input" class="hidden" value="1" /> 
+          <span id="time-left" class="ml-auto text-sm">Time Left: 60 seconds</span>
+        </div>
+        <div class="bg-gray-100 w-full h-60 rounded-md text-base overflow-y-hidden px-4 py-2 mb-4">
+          <div id="text-container" class="text-gray-600"></div>
+        </div>
+        <textarea
+          autocomplete="off"
+          type="text"
+          id="text-input"
+          class="bg-gray-100 text-gray-600 w-full h-20 text-base px-4 py-2 mb-4 rounded-md"
+        ></textarea>
+        <div id="results" class="hidden">
+          <h2 class="text-xl font-medium">Results</h1>
+          <h3 class="text-lg">WPM</h3>
+          <p id="WPM"></p>
+          <h3 class="text-lg">Incorrect Words</h3>
+          <p id="incorrect-words"></p>
+          <h3 class="text-lg">Adjusted WPM</h3>
+          <p id="adjusted-WPM"></p>
+        </div>
+      </section>
+    </main>
+    <script src="index.bundle.js"></script>
+  </body>
+</html>
