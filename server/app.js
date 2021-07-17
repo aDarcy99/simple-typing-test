@@ -17,6 +17,6 @@ app.use(express.static(path.join(__dirname, "../views")));
 app.use("/", IndexRouter)
 
 //listen to port
-app.listen(process.env.port || port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Server start on ${port}.`)
 })
