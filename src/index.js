@@ -92,27 +92,7 @@ const renderResults = () => {
 }
 //
 const updateCurrentLineHeight = () => {
-  const textContainer = document.querySelector("#text-container");
-
-  const currentDistanceFromTop = document.querySelector(".current").getBoundingClientRect().top
-  const currentContainerOffset = textContainer.style.transform ? parseInt(textContainer.style.transform.substring(11), 10) : 0
-  //get the differnce between the current distance from top and the set distance from top
-  const difference = currentDistanceFromTop - distanceFromTop;
-  //If the distance has changed change the variables, and skip the rest of the function
-  if (hasDistanceChanged) {
-    hasDistanceChanged = false
-    distanceFromTop = currentDistanceFromTop;
-    return;
-  }
-  //Get the current transform value and add the difference between the current offset and next offset
-  if (difference > 0 && difference < 100) {
-    textContainer.style.transform = `translateY(${currentContainerOffset - difference}px)`;
-    hasDistanceChanged = true
-  } else if (difference < 0 && difference < 100) {
-    textContainer.style.transform = `translateY(${currentContainerOffset - difference}px)`;
-    hasDistanceChanged = true
-  }
-  distanceFromTop = currentDistanceFromTop;
+  document.querySelector(".current").scrollIntoView()
 }
 
 
