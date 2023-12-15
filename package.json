@@ -1,16 +1,13 @@
 {
-  "name": "typing-test-node",
+  "name": "simple-typing-test",
   "version": "1.0.0",
   "description": "A simple typing test",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "start": "npm run build && node server/app.js",
-    "client": "webpack serve --mode development --hot",
-    "server": "nodemon server/app.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-prebuild": "npm install -f",
-    "heroku-postbuild": "npm run build"
+    "build": "webpack",
+    "dev": "webpack serve --mode development --hot",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -24,6 +21,7 @@
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "concurrently": "^6.2.0",
     "css-loader": "^6.0.0",
+    "gh-pages": "^6.1.0",
     "nodemon": "^2.0.12",
     "postcss": "^8.3.5",
     "postcss-loader": "^6.1.1",
